@@ -1,0 +1,11 @@
+<template>
+
+    <t t-name="dbt_show_current_db.DBInfoWidget">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" t-att-title="widget.dbt_current_db">
+                <span><t t-esc="widget.dbt_current_db"/></span>
+            </a>
+        </li>
+    </t>
+
+</template>
