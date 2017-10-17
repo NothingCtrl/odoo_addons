@@ -8,7 +8,7 @@
     'name': "Show Current Database",
 
     'summary': """
-        When active the developer mode, this module show current database in use next to debug icon""",
+        After install, this module will show current database in use next to debug icon. You can click on widget to toggle between debug / non-debug mode""",
 
     'description': """
 Show Current Database
@@ -22,7 +22,7 @@ Show Current Database
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
     'category': 'Web',
-    'version': '0.1',
+    'version': '0.2',
 
     # any module necessary for this one to work correctly
     'depends': ['web'],

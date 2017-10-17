@@ -6,14 +6,16 @@ odoo.define('web.dbt_show_current_db',function (require) {
     var SystrayMenu = require('web.SystrayMenu');
     var web_client = require('web.web_client');
     var Model = require('web.Model');
+    var framework = require('web.framework');
 
     /***************************************************************************
-    Create an new 'SwitchCompanyWidget' widget that allow users to switch
-    from a company to another more easily.
+    Create an new 'DBTShowCurrentDB' widget that show current database
     ***************************************************************************/
     var DBTShowCurrentDB = Widget.extend({
-
         template:'dbt_show_current_db.DBInfoWidget',
+        events: {
+            "click": "on_click",
+        },
 
         /***********************************************************************
         Overload section
@@ -60,6 +62,16 @@ odoo.define('web.dbt_show_current_db',function (require) {
             })
         },
 
+        on_click: function(event) {
+            event.preventDefault();
+            var res = window.location.href.split("web");
+            if (window.location.href.indexOf('debug=1') === -1) {
+                framework.redirect(res[0] + 'web?debug=1' + res[1]);
+            } else {
+                res = window.location.href.split("web?debug=1");
+                framework.redirect(res[0] + 'web' + res[1]);
+            }
+        }
     });
 
 SystrayMenu.Items.push(DBTShowCurrentDB);
